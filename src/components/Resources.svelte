@@ -7,13 +7,14 @@
             money : $resources.money += $resources.potatoes * 2,
             potatoes: 0
         })
-        console.log($resources.money)
     }
 </script>
 
 <div class="sidebar">
-    Potatoes: {$resources.potatoes} (+{$resources.potatoRate}/s)
-    <button on:click={sellPotatoes}> Sell Potatoes!</button>
+    <div class="resource">
+        Potatoes: {$resources.potatoes} (+{$resources.potatoRate}/s)
+        <button on:click={sellPotatoes}>Sell Potatoes!</button>
+    </div>
 </div>
 
 
@@ -25,6 +26,11 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        gap: 10px
+    }
+    .resource {
+        display: flex;
+        flex-direction: row;
     }
 
 </style>

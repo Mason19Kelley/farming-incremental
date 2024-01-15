@@ -22,15 +22,19 @@
     {:else}
         <!-- svelte-ignore a11y-click-events-have-key-events -->
         <!-- svelte-ignore a11y-no-static-element-interactions -->
-        <div on:click={plotClick}>Click</div>
+        <div class="buy-plot" on:click={plotClick}>+</div>
     {/if}
 </div>
 
 <style>
-.plot {
-    width: 30px;
-    height: 30px;
-    border: 2px solid white;
-    
-}
+    .plot {
+        width: 3rem;
+        height: 3rem;;
+        border: 1px solid white;
+    }
+
+    .buy-plot {
+        text-align: center;
+        vertical-align: middle;
+    }
 </style>

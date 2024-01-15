@@ -6,7 +6,10 @@
 </script>
     <div class="wrapper">
         <Resources />
-        <Farm />
+        <div class="main-body">
+          <Farm />
+        </div>
+        
     </div>
   
   
@@ -18,6 +21,13 @@
         justify-content: flex-start;
         height: 100%
     }
+    .main-body {
+      display: flex;
+      justify-content: center;
+      margin-top: 3%;
+      width: 100%
+    }
+
 
 
   </style>

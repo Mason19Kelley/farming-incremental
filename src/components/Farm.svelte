@@ -6,13 +6,18 @@
     {#each new Array(16) as _, i}
         <Plot />
     {/each}
-  </div>
+</div>
 
 
 <style>
   .grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-  }
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: .1rem;
+    width: 14rem;
+    height: 13rem;
+    }
+
+  
 </style>
