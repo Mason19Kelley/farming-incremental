@@ -1,6 +1,7 @@
 <script>
     let isPotato = false;
     let potatoImg = 'potato.png';
+    export let plantIndex;
     import { resources } from "../stores/resources";
 
     const increasePotatoRate = () => {
@@ -10,11 +11,14 @@
         })
     }
     const plotClick = () => {
-        isPotato = true;
-        increasePotatoRate();
+        if($resources.plants[plantIndex] === ''){
+            $resources.plants[plantIndex] = "potato"
+            increasePotatoRate();
+        }
+        toggleSidebar()
     }
 
-    const closeSidebar = () => {
+    const toggleSidebar = () => {
         resources.set({
             ...$resources,
             sidebarOpen: !$resources.sidebarOpen
@@ -25,13 +29,13 @@
 </script>
 
 
-<div  class="plot" on:click={closeSidebar}>
-    {#if isPotato}
+<div  class="plot" on:click={plotClick}>
+    {#if $resources.plants[plantIndex] !== ""}
         <img src={potatoImg} alt="potato"  style="max-width: 100%; max-height: 100%;" />
     {:else}
         <!-- svelte-ignore a11y-click-events-have-key-events -->
         <!-- svelte-ignore a11y-no-static-element-interactions -->
-        <div class="buy-plot" on:click={plotClick}>+</div>
+        <div class="buy-plot" >+</div>
     {/if}
 </div>
 

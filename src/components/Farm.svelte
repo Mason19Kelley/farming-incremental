@@ -1,10 +1,11 @@
 <script>
 	import Plot from './Plot.svelte';
+  import { resources } from "../stores/resources";
 </script>
 
 <div class="grid">
-    {#each new Array(16) as _, i}
-        <Plot />
+    {#each $resources.plants as _, plantIndex}
+        <Plot {plantIndex}/>
     {/each}
 </div>
 
