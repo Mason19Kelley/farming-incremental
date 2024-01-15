@@ -13,10 +13,19 @@
         isPotato = true;
         increasePotatoRate();
     }
+
+    const closeSidebar = () => {
+        resources.set({
+            ...$resources,
+            sidebarOpen: !$resources.sidebarOpen
+        })
+    }
+
+    
 </script>
 
 
-<div  class="plot">
+<div  class="plot" on:click={closeSidebar}>
     {#if isPotato}
         <img src={potatoImg} alt="potato"  style="max-width: 100%; max-height: 100%;" />
     {:else}
