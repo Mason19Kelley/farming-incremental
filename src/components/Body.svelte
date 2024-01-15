@@ -1,30 +1,12 @@
 <script>
+	import Farm from './Farm.svelte';
 	import Resources from './Resources.svelte';
-    let score = 0;
-
-    function updateGameState() {
-        score += 1;
-    }
-
-    const interval = setInterval(updateGameState, 1000); // Update every 1000 milliseconds
-
-    window.onunload = () => {
-        clearInterval(interval);
-    };
-
-    const resetScore = () => {
-        score = 0;
-    }
+    let potatoes = 0;
+    let potatoRate = 0;
 </script>
     <div class="wrapper">
-        <Resources />
-        <div class="main-content">
-            <div>
-                <h1>Testing Game Loop</h1>
-                <p>Score: {score}</p>
-                <button on:click={resetScore}>Reset Score</button>
-            </div>
-        </div>
+        <Resources {potatoRate}/>
+        <Farm {potatoRate}/>
     </div>
   
   

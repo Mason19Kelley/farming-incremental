@@ -1,9 +1,10 @@
 <script>
     let potatoes = 0;
+    export let potatoRate;
 </script>
 
 <div class="sidebar">
-    Potatoes: {potatoes}
+    Potatoes: {potatoes} (+{potatoRate}/s)
 </div>
 
 <style>
