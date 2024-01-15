@@ -1,27 +1,17 @@
 <script>
-    let isPotato = false;
-    let potatoImg = 'potato.png';
     export let plantIndex;
     import { resources } from "../stores/resources";
 
-    const increasePotatoRate = () => {
-        resources.set({
-            ...$resources,
-            potatoRate: $resources.potatoRate += 1
-        })
-    }
+
     const plotClick = () => {
-        if($resources.plants[plantIndex] === ''){
-            $resources.plants[plantIndex] = "potato"
-            increasePotatoRate();
-        }
-        toggleSidebar()
+        toggleSidebar(plantIndex)
     }
 
-    const toggleSidebar = () => {
+    const toggleSidebar = (selectedPlot) => {
         resources.set({
             ...$resources,
-            sidebarOpen: !$resources.sidebarOpen
+            sidebarOpen: !$resources.sidebarOpen,
+            selectedPlot: selectedPlot
         })
     }
 
@@ -31,7 +21,7 @@
 
 <div  class="plot" on:click={plotClick}>
     {#if $resources.plants[plantIndex] !== ""}
-        <img src={potatoImg} alt="potato"  style="max-width: 100%; max-height: 100%;" />
+        <img src={`${$resources.plants[plantIndex]}.png`} alt="potato"  style="max-width: 100%; max-height: 100%;" />
     {:else}
         <!-- svelte-ignore a11y-click-events-have-key-events -->
         <!-- svelte-ignore a11y-no-static-element-interactions -->

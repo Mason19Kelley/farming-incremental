@@ -7,6 +7,7 @@
 
   const incrementPotatoes  = () => {
       $resources.potatoes += $resources.potatoRate;
+      $resources.carrots += $resources.carrotRate;
   }
 
 

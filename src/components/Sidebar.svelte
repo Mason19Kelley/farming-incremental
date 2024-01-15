@@ -1,10 +1,38 @@
 <script>
     import { resources } from "../stores/resources";
+
+
+    const buyPotato = () => {
+        if($resources.plants[$resources.selectedPlot] === '') {
+            resources.set({
+                ...$resources,
+                potatoRate: $resources.potatoRate += 1
+            })
+            $resources.plants[$resources.selectedPlot] = "potato"
+            console.log($resources.plants)
+        }
+
+    }
+
+    const buyCarrot = () => {
+        if($resources.plants[$resources.selectedPlot] === '') {
+            resources.set({
+                ...$resources,
+                carrotRate: $resources.carrotRate += 1
+            })
+            $resources.plants[$resources.selectedPlot] = "carrot"
+
+        }
+       
+    }
+
 </script>
   
 
   <div class={`sidebar ${$resources.sidebarOpen ? 'open' : ''}`}>
-    <p>sidebar</p>
+    <h5>Plot {$resources.selectedPlot + 1}</h5>
+    <button on:click={buyPotato}>Buy Potato</button>
+    <button on:click={buyCarrot}>Buy Carrots</button>
   </div>
 
 <style>
