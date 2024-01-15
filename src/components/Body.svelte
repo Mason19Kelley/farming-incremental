@@ -23,8 +23,8 @@
     }
     .main-body {
       display: flex;
-      justify-content: center;
       margin-top: 3%;
+      margin-left: 35%;
       width: 100%
     }
 
