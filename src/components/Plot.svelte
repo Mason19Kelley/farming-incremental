@@ -1,11 +1,17 @@
 <script>
-    export let potatoRate;
     let isPotato = false;
     let potatoImg = 'potato.png';
-    
+    import { resources } from "../stores/resources";
+
     const increasePotatoRate = () => {
-        potatoRate += 1;
+        resources.set({
+            ...$resources,
+            potatoRate: $resources.potatoRate += 1
+        })
+    }
+    const plotClick = () => {
         isPotato = true;
+        increasePotatoRate();
     }
 </script>
 
@@ -16,7 +22,7 @@
     {:else}
         <!-- svelte-ignore a11y-click-events-have-key-events -->
         <!-- svelte-ignore a11y-no-static-element-interactions -->
-        <div on:click={increasePotatoRate}>Click</div>
+        <div on:click={plotClick}>Click</div>
     {/if}
 </div>
 

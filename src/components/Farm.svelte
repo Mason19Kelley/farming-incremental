@@ -1,11 +1,10 @@
 <script>
 	import Plot from './Plot.svelte';
-    export let potatoRate;
 </script>
 
 <div class="grid">
     {#each new Array(16) as _, i}
-        <Plot {potatoRate}/>
+        <Plot />
     {/each}
   </div>
 

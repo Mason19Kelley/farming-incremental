@@ -1,11 +1,21 @@
 <script>
-    let potatoes = 0;
-    export let potatoRate;
+    import { resources } from "../stores/resources";
+
+    const sellPotatoes = () => {
+        resources.set({
+            ...$resources,
+            money : $resources.money += $resources.potatoes * 2,
+            potatoes: 0
+        })
+        console.log($resources.money)
+    }
 </script>
 
 <div class="sidebar">
-    Potatoes: {potatoes} (+{potatoRate}/s)
+    Potatoes: {$resources.potatoes} (+{$resources.potatoRate}/s)
+    <button on:click={sellPotatoes}> Sell Potatoes!</button>
 </div>
+
 
 <style>
     .sidebar {
@@ -16,4 +26,5 @@
         flex-direction: column;
         align-items: center;
     }
+
 </style>

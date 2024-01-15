@@ -1,10 +1,10 @@
 <script>
-    let money = 0;
+    import { resources } from "../stores/resources";
 </script>
 
 
 <div class="wrapper">
-    <p>You have {money} money</p>
+    <p>You have {$resources.money} money</p>
 </div>
 
 <style>

@@ -1,12 +1,12 @@
 <script>
 	import Farm from './Farm.svelte';
 	import Resources from './Resources.svelte';
-    let potatoes = 0;
-    let potatoRate = 0;
+    
+
 </script>
     <div class="wrapper">
-        <Resources {potatoRate}/>
-        <Farm {potatoRate}/>
+        <Resources />
+        <Farm />
     </div>
   
   
