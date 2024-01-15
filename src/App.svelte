@@ -1,27 +1,18 @@
 <script>
-  let score = 0;
+	import Body from './components/Body.svelte';
+	import Header from './components/Header.svelte';
+  import { resources } from "./stores/resources";
 
-  function updateGameState() {
-    score += 1;
+  const incrementPotatoes  = () => {
+      $resources.potatoes += $resources.potatoRate;
   }
 
-  const interval = setInterval(updateGameState, 1000); // Update every 1000 milliseconds
-    window.onunload = () => {
-    clearInterval(interval);
-  };
 
-  const resetScore = () => {
-    score = 0;
-  }
+  setInterval(incrementPotatoes, 1000);
 </script>
 
-
-
-<div>
-  <h1>Testing Game Loop</h1>
-  <p>Score: {score}</p>
-  <button on:click={resetScore}>Reset Score</button>
-</div>
+<Header />
+<Body />
 
 
 <style>
