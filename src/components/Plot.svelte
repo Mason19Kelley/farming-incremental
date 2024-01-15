@@ -1,7 +1,7 @@
 <script>
     export let potatoRate;
     let isPotato = false;
-    let potatoImg = 'src/assets/potato.png';
+    let potatoImg = 'potato.png';
     
     const increasePotatoRate = () => {
         potatoRate += 1;
