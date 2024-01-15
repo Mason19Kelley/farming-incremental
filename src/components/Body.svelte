@@ -19,11 +19,5 @@
         height: 100%
     }
 
-    .main-content {
-        width: 85%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-    }
 
   </style>
