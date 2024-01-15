@@ -9,6 +9,10 @@
     window.onunload = () => {
     clearInterval(interval);
   };
+
+  const resetScore = () => {
+    score = 0;
+  }
 </script>
 
 
@@ -16,9 +20,9 @@
 <div>
   <h1>Testing Game Loop</h1>
   <p>Score: {score}</p>
+  <button on:click={resetScore}>Reset Score</button>
 </div>
 
 
 <style>
-  /* Your game styles go here */
 </style>
